@@ -1,1 +1,1 @@
-<img class="img-thumbnail border-0" [src]="paymentMethod.image" [alt]="paymentMethod.name">
+<img class="img-thumbnail border-0" [src]="paymentMethod.image" [alt]="paymentMethod.name" [ngClass]="screenWidth<576?'paymentMethodSmall':'paymentMethodMed'">

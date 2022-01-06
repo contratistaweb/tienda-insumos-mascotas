@@ -3,14 +3,20 @@
   <div class="card-body">
     <h5 class="card-title">{{product.name}}</h5>
     <ng-container *ngFor="let star of arrayStars, let i = index">
-    <i class="bi bi-star-fill" [ngClass]="i<=product.stars?'text-warning':''"></i>
+      <i class="bi bi-star-fill" [ngClass]="i<=product.stars?'text-warning':''"></i>
     </ng-container>
-    <p>{{product.price |currency}}</p>
-    <hr>
-    <span>{{membershipPrice(product.price) | currency}}</span>
-    <img src="/assets/images/membership.png" alt="member image" id="membership">
-    <div class="row card-actions my-2 mx-0 px-0">
-    <a href="#" class="btn btn-info mx-0">Agregar al carrito</a>
+    <div class="row row-cols-2">
+      <p class="fs-4">{{product.price |currency}}</p>
+      <span class="text-muted fs-6">antes: {{(product.price * 1.15) |currency}}</span>
     </div>
+    <hr>
+    <div class="row row-cols-2">
+      <span class="fs-4 text-danger">{{membershipPrice(product.price) | currency}}</span>
+      <img src="/assets/images/membership.png" alt="member image" id="membership">
+    </div>
+
+  </div>
+  <div class="row card-actions mt-2 mb-0 mx-0 px-0 py-3 bg-primary">
+    <a href="#" class="btn btn-outline text-white fw-bolder m-0 py-3-">Agregar al carrito</a>
   </div>
 </div>

@@ -1,15 +1,14 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'payment-methods',
-  templateUrl: './payment-methods.component.html',
-  styleUrls: ['./payment-methods.component.scss']
+  selector: 'mobile-app',
+  templateUrl: './mobile-app.component.html',
+  styleUrls: ['./mobile-app.component.scss']
 })
-export class PaymentMethodsComponent implements OnInit {
+export class MobileAppComponent implements OnInit {
 
+  @Input() mobileApp!: {name:string, image: string};
   screenWidth!:number;
-
-  @Input() paymentMethod!: {name: string, image:string};
   constructor() {
     this.onResize();
   }

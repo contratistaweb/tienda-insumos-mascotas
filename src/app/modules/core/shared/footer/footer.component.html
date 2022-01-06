@@ -1,15 +1,61 @@
-<div class="container">
+<div class="container my-5">
   <div class="row">
-    <div class="col-12 row row-cols-4">
-      <span class="col">footer works!</span>
-    </div>
-    <div class="col-6 row row-cols-6 d-flex justify-content-around align-items-center">
-      <payment-methods *ngFor="let method of methods" [paymentMethod]="method"></payment-methods>
-    </div>
-    <div class="col-6 row row-cols-6 d-flex justify-content-around align-items-center">
-      <mobile-app *ngFor="let mobileApp of mobileApps" [mobileApp]="mobileApp"></mobile-app>
+    <div class="col-12 row row-cols-md-5 row-cols-1 d-flex justify-content-around align-items-start mx-0">
+
+      <div class="col-12 row d-flex justify-content-center align-items-center text-primary my-3">
+        <img class="img-thumbnail border-0" src="/assets/images/preview.jpg" alt="logo">
+        <div class="col-12 row">
+          <h4 class="col-12 text-center">Siguenos en:</h4>
+          <div class="col-12 row row-cols-3">
+            <i class="bi bi-youtube fs-2 text-center"></i>
+            <i class="bi bi-facebook fs-2 text-center"></i>
+            <i class="bi bi-instagram fs-2 text-center"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 row d-flex justify-content-center align-items-center text-primary my-3"
+           *ngFor="let item of footerItems, let i = index">
+
+        <h3 class="text-center text-md-start my-3">{{item.title | uppercase}}</h3>
+        <span class="col-12 text-center text-md-start my-3" *ngFor="let link of item.links">{{link}}</span>
+      </div>
+
+      <div
+        class="col-12 row d-flex justify-content-center align-items-center text-primary text-center text-md-start my-3">
+        <h3 class="col-12 my-3">SUSCRÍBETE</h3>
+        <form class="col-12 my-3">
+          <div class="input-group mb-3 mx-auto px-auto">
+            <label for="inputGroupFile03" class="col-12">Recibe noticias y promociones al instante</label>
+            <input type="email" class="form-control rounded border-2 border-primary" id="inputGroupFile03"
+                   placeholder="Correo electrónico" aria-describedby="inputGroupFileAddon03" aria-label="Upload">
+            <button class="btn btn-outline-primary border-2 p-3" type="button" id="inputGroupFileAddon03">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input border-primary" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">He leído y acepto las Politicas de privacidad</label>
+          </div>
+        </form>
+      </div>
+
     </div>
   </div>
+</div>
+<div class="container-fluid bg-light py-2 ">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-6 col-12 row row-cols-4 py-2 d-flex justify-content-around align-items-center mx-0">
+        <payment-methods *ngFor="let method of methods" [paymentMethod]="method"></payment-methods>
+      </div>
+      <div class="col-md-6 col-12 row row-cols-3 py-2 d-flex justify-content-around align-items-center mx-0">
+        <mobile-app *ngFor="let mobileApp of mobileApps" [mobileApp]="mobileApp"></mobile-app>
+      </div>
+    </div>
+  </div>
+
 
 </div>
 

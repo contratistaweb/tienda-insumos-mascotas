@@ -7,6 +7,7 @@ import {BrandsService} from "./services/brands.service";
 import {CategoriesService} from "./services/categories.service";
 import {PaymentMethodsService} from "./services/payment-methods.service";
 import {MobileAppsService} from "./services/mobile-apps.service";
+import {ContentsService} from "./services/contents.service";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {MobileAppsService} from "./services/mobile-apps.service";
     BrandsService,
     CategoriesService,
     PaymentMethodsService,
-    MobileAppsService
+    MobileAppsService,
+    ContentsService
   ]
 })
 export class CoreModule {

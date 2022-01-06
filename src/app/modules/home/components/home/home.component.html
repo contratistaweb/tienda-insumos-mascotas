@@ -1,8 +1,8 @@
 <div class="container">
   <slider></slider>
   <div class="row my-5">
-    <h2 class="col-12">Categoria</h2>
-    <div class="row col-12 row-cols-4 g-3">
+    <h2 class="col-12">Categorias</h2>
+    <div class="row col-12 row-cols-md-4 row-cols-1 mx-0 g-3">
       <categories *ngFor="let category of categories" [category]="category"></categories>
     </div>
   </div>
@@ -14,7 +14,7 @@
       <i class="bi bi-arrow-left-circle-fill fs-2" id="previousBrand" *ngIf="nextBrands > 0"
          (click)="getBrands($event)"></i>
     </div>
-    <div class="row row-cols-6 g-3 col-10">
+    <div class="row row-cols-md-6 row-cols-3 g-3 col-10">
       <featured-brands *ngFor="let brand of brands" [brand]="brand"></featured-brands>
     </div>
     <div class="col-1 d-flex justify-content-center align-items-center">

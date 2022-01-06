@@ -2,24 +2,26 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
-import { FooterComponent } from './components/footer/footer.component';
-import {NavbarComponent} from "./components/navbar/navbar.component";
 import { SliderComponent } from './components/slider/slider.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductComponent } from './components/product/product.component';
+import {CoreModule} from "../core/core.module";
+import { CategoriesComponent } from './components/categories/categories.component';
+import { FeaturedBrandsComponent } from './components/featured-brands/featured-brands.component';
 
 
 @NgModule({
   declarations: [
-    NavbarComponent,
-    FooterComponent,
     SliderComponent,
     HomeComponent,
-    ProductComponent
+    ProductComponent,
+    CategoriesComponent,
+    FeaturedBrandsComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    CoreModule
   ]
 })
 export class HomeModule { }

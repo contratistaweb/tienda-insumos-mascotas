@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 row row-cols-4">
+      <span class="col">footer works!</span>
+    </div>
+    <div class="col-6 row row-cols-6 d-flex justify-content-around align-items-center">
+      <payment-methods *ngFor="let method of methods" [paymentMethod]="method"></payment-methods>
+    </div>
+    <div class="col-6 row row-cols-6 d-flex justify-content-around align-items-center">
+      <mobile-app *ngFor="let mobileApp of mobileApps" [mobileApp]="mobileApp"></mobile-app>
+    </div>
+  </div>
+
+</div>
+
+

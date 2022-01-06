@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Product} from "../../../core/interfaces/product";
 
 @Component({
   selector: 'product',
@@ -7,7 +8,8 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  @Input() product: any;
+  @Input()
+  product!: Product;
   arrayStars: string[] = [];
 
   constructor() {
@@ -17,7 +19,7 @@ export class ProductComponent implements OnInit {
     this.stars();
   }
 
-  dcto = (num: number): number => {
+  membershipPrice = (num: number): number => {
     return parseInt((num / 1.175).toString());
   }
 

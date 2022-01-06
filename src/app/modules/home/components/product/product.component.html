@@ -1,5 +1,5 @@
 <div class="card">
-  <img [src]="'/assets/images/'+product.image" class="card-img-top" alt="...">
+  <img [src]="product.image" class="card-img-top" [alt]="product.name">
   <div class="card-body">
     <h5 class="card-title">{{product.name}}</h5>
     <ng-container *ngFor="let star of arrayStars, let i = index">
@@ -7,7 +7,8 @@
     </ng-container>
     <p>{{product.price |currency}}</p>
     <hr>
-    <span>Price: {{dcto(product.price) | currency}}</span>
+    <span>{{membershipPrice(product.price) | currency}}</span>
+    <img src="/assets/images/membership.png" alt="member image" id="membership">
     <div class="row card-actions my-2 mx-0 px-0">
     <a href="#" class="btn btn-info mx-0">Agregar al carrito</a>
     </div>

@@ -1,7 +1,40 @@
-<navbar></navbar>
 <div class="container">
-  <div class="row row-cols-md-5 g-3">
+  <slider></slider>
+  <div class="row my-5">
+    <h2 class="col-12">Categoria</h2>
+    <div class="row col-12 row-cols-4 g-3">
+      <categories *ngFor="let category of categories" [category]="category"></categories>
+    </div>
+  </div>
+  <div class="row my-5">
+    <div class="col-12">
+      <h2>Marcas destacadas</h2>
+    </div>
+    <div class="col-1 d-flex justify-content-center align-items-center">
+      <i class="bi bi-arrow-left-circle-fill fs-2" id="previousBrand" *ngIf="nextBrands > 0"
+         (click)="getBrands($event)"></i>
+    </div>
+    <div class="row row-cols-6 g-3 col-10">
+      <featured-brands *ngFor="let brand of brands" [brand]="brand"></featured-brands>
+    </div>
+    <div class="col-1 d-flex justify-content-center align-items-center">
+      <i class="bi bi-arrow-right-circle-fill fs-2" id="nextBrand" *ngIf="nextBrands < 10"
+         (click)="getBrands($event)"></i>
+    </div>
+  </div>
+  <div class="row row-cols-md-4 g-3">
     <product *ngFor="let product of products" [product]="product" class="col-12 col-md"></product>
   </div>
+  <div class="d-flex justify-content-center align-items-center my-5">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" id="Previous" (click)="pagination($event)">Previous</a></li>
+        <li class="page-item"><a class="page-link text-muted" >{{prevNum(page)}}</a></li>
+        <li class="page-item"><a class="page-link">{{page}}</a></li>
+        <li class="page-item"><a class="page-link text-muted" >{{nextNum(page)}}</a></li>
+        <li class="page-item"><a class="page-link" id="next" (click)="pagination($event)">Next</a></li>
+      </ul>
+    </nav>
+  </div>
+
 </div>
-<footer></footer>
